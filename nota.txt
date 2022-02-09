@@ -1,0 +1,35 @@
+COMANDOS
+php artisan make:migration create_nombre_table      -> crear tabla migracion
+php artisan add_column_nombre                       -> adicionar tabla
+php artisan update_column_nombre --table=nombre     -> modificar tabla
+php artisan delete_column_nombre --table=nombre     -> modificar tabla
+php artisan migrate              --table=nombre     -> ejecuta la migracion
+
+
+Modificar la tabla  
+DB::statement("ALTER TABLE nombre MODIFY column VARCHAR(50)");
+
+Elimina la columna 
+$table->dropColumn('columna');
+$table->dropForeign('posts_user_id_foreign');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Método	Descripción
+$table->cascadeOnUpdate();	Las actualizaciones deben ser en cascada.
+$table->restrictOnUpdate();	Las actualizaciones deben estar restringidas.
+$table->cascadeOnDelete();	Las eliminaciones deben ocurrir en cascada.
+$table->restrictOnDelete();	Las eliminaciones deben estar restringidas.
+$table->nullOnDelete();	Las eliminaciones deben establecer el valor de la clave externa en nulo.
